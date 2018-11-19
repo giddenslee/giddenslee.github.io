@@ -5,19 +5,21 @@
   
 
   
-  <title>To the Beginning:TODO List | Giddens&#39;s Blog</title>
+  <title>Mutable and immutable objects in Python for loop | Giddens&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Magic Methods in Python Common Knowledge Harmonic Number Dynamic Programming 2016Bytecup pandas DataFrame basic">
+  <meta name="description" content="问题： 描述：当expression_list为str时，改变for循环中的expression_list不影响循环本身的执行。与list不同。 原因：12**for_stmt** ::=  &amp;quot;for&amp;quot; target_list &amp;quot;in&amp;quot; expression_list &amp;quot;:&amp;quot; suite[&amp;quot;else&amp;quot; &amp;quot;:&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="To the Beginning:TODO List">
-<meta property="og:url" content="https://giddenslee.github.io/2018/09/17/2018-9-17-To-the-Beginning/index.html">
+<meta property="og:title" content="Mutable and immutable objects in Python for loop">
+<meta property="og:url" content="https://giddenslee.github.io/2018/11/19/2018-11-19-Mutable-Objects-in-Python-for-Loop/index.html">
 <meta property="og:site_name" content="Giddens&#39;s Blog">
-<meta property="og:description" content="Magic Methods in Python Common Knowledge Harmonic Number Dynamic Programming 2016Bytecup pandas DataFrame basic">
+<meta property="og:description" content="问题： 描述：当expression_list为str时，改变for循环中的expression_list不影响循环本身的执行。与list不同。 原因：12**for_stmt** ::=  &amp;quot;for&amp;quot; target_list &amp;quot;in&amp;quot; expression_list &amp;quot;:&amp;quot; suite[&amp;quot;else&amp;quot; &amp;quot;:&amp;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-17T14:47:26.332Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11080661-683703df9e317934.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-11-19T10:50:04.887Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="To the Beginning:TODO List">
-<meta name="twitter:description" content="Magic Methods in Python Common Knowledge Harmonic Number Dynamic Programming 2016Bytecup pandas DataFrame basic">
+<meta name="twitter:title" content="Mutable and immutable objects in Python for loop">
+<meta name="twitter:description" content="问题： 描述：当expression_list为str时，改变for循环中的expression_list不影响循环本身的执行。与list不同。 原因：12**for_stmt** ::=  &amp;quot;for&amp;quot; target_list &amp;quot;in&amp;quot; expression_list &amp;quot;:&amp;quot; suite[&amp;quot;else&amp;quot; &amp;quot;:&amp;">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/11080661-683703df9e317934.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternate" href="/atom.xml" title="Giddens&#39;s Blog" type="application/atom+xml">
   
@@ -64,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2018-9-17-To-the-Beginning" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2018-11-19-Mutable-Objects-in-Python-for-Loop" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/09/17/2018-9-17-To-the-Beginning/" class="article-date">
-  <time datetime="2018-09-17T13:05:49.747Z" itemprop="datePublished">2018-09-17</time>
+    <a href="/2018/11/19/2018-11-19-Mutable-Objects-in-Python-for-Loop/" class="article-date">
+  <time datetime="2018-11-19T10:50:14.171Z" itemprop="datePublished">2018-11-19</time>
 </a>
     
   </div>
@@ -78,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      To the Beginning:TODO List
+      Mutable and immutable objects in Python for loop
     </h1>
   
 
@@ -86,19 +88,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>Magic Methods in Python</li>
-<li>Common Knowledge</li>
-<li>Harmonic Number</li>
-<li>Dynamic Programming</li>
-<li>2016Bytecup</li>
-<li>pandas DataFrame basic</li>
-</ol>
+        <p>问题：<br><img src="https://upload-images.jianshu.io/upload_images/11080661-683703df9e317934.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="description"></p>
+<p>描述：当expression_list为str时，改变for循环中的expression_list不影响循环本身的执行。与list不同。</p>
+<p>原因：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">**for_stmt** ::=  &quot;for&quot; target_list &quot;in&quot; expression_list &quot;:&quot; suite</span><br><span class="line">[&quot;else&quot; &quot;:&quot; suite]</span><br></pre></td></tr></table></figure></p>
+<p>The expression list is evaluated <strong>once</strong>; it should yield an iterable object. An iterator is created for the result of the <code>expression_list</code>. The suite is then executed once for each item provided by the iterator, in the order returned by the iterator. </p>
+<p>当expression_list为mutable objects时（例如list，dict），会出现expression_list中的sequence被修改影响程序执行的情况，但string是immutable object，用replace之类修改会返回新的字符串，而不是原址修改。</p>
+<p>注：list.remove()无返回值。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://giddenslee.github.io/2018/09/17/2018-9-17-To-the-Beginning/" data-id="cjoo6y2dg0001zsu4cjgvj4s4" class="article-share-link">Share</a>
+      <a data-url="https://giddenslee.github.io/2018/11/19/2018-11-19-Mutable-Objects-in-Python-for-Loop/" data-id="cjoo6y2e50002zsu4xzggh7ci" class="article-share-link">Share</a>
       
       
     </footer>
@@ -107,15 +107,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/09/19/2018-9-19-Python-Tricks/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Python使用细节拾遗
-        
-      </div>
-    </a>
   
+    <a href="/2018/09/19/2018-9-19-Python-Tricks/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python使用细节拾遗</div>
+    </a>
   
 </nav>
 
